@@ -106,7 +106,19 @@ public class LinkedList_EM {
         prev.next=prev.next.next;
         return val;
     }
-
+  // Reverse LinkedLIst
+    public static void reverseLinkedList(LinkedList_EM linkedList) {
+        Node previous = null;
+        Node current = linkedList.head;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        linkedList.head = previous;
+    }
     // Display the Linked list
     public void display(){
         Node temp=head;
